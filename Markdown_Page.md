@@ -2,9 +2,9 @@
 
 
 Name: | Description: | Notes:
------ | ------------ | ------------
-|nun|
-zeug||
+----- | ------------ | ------------ |
+diese | nun | lol
+zeug ||
 
 
 
