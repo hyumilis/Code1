@@ -1,10 +1,8 @@
 # Code1 repo description and notes
 
 
-Description:
-
-
-Notes:
+Description: | Notes:
+------------ | ------------
 
 
 Else:
