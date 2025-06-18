@@ -1,7 +1,7 @@
 # Code1 repo description and notes
 
 
-< b/ Description:>
+Description:
 
 
 Notes:
