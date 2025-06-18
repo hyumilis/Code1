@@ -1,2 +1,2 @@
-# Code1
-First repository for Code 1
+# Code1 repo description and notes
+
