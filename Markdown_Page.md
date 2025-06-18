@@ -4,7 +4,7 @@
 Name: | Description: | Notes:
 ----- | ------------ | ------------ |
 diese | nun | lol
-zeug ||
+zeug | was |
 
 
 
