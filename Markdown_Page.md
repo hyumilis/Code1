@@ -3,8 +3,7 @@
 
 Name: | Description: | Notes:
 ----- | ------------ | ------------ |
-
-diese | nun | 
+diese | nun |
 zeug | was |
 
 
