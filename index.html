@@ -48,7 +48,7 @@
 </script>
 <script>
 function generateFiles() {
-  const count = parseInt(document.getElementById('fileCount').value);
+  const count = 3;
   for (let i = 1; i <= count; i++) {
     const text = `This is the content of file ${i}`;
     const blob = new Blob([text], { type: "text/plain" });
