@@ -28,7 +28,7 @@
 <li><a href="https://www.Spotify.com" target="_blank" >Spotify</a></li>
 <li><a href="data:text/plain;charset=utf-8,Hello%20World" download="NewNote.txt">Notizen</a></li>
 <li><a href="Spaß_Wishlist.html" target="_blank">Wishlist</a></li>
-<li><a href="data:text/plain;charset=utf-8,This%20was%20a%20Mistake!" download="1.txt" download="2.txt">DON´T</a></li>
+<li><a onclick="generateFiles()">DON´T</a></li>
 
 </ul></br>
 
@@ -45,6 +45,22 @@
   const selectedImage = images[randomIndex];
 
   document.getElementById("randomImage").src = selectedImage;
+</script>
+<script>
+function generateFiles() {
+  const count = parseInt(document.getElementById('fileCount').value);
+  for (let i = 1; i <= count; i++) {
+    const text = `This is the content of file ${i}`;
+    const blob = new Blob([text], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `file_${i}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(link.href);
+  }
+}
 </script>
 
 <img id="randomImage" src="" alt="Zufallsbild">
