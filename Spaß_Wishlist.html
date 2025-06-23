@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		LOL-List-com.xxx
+	</title>
+	<style>
+	<!--
+	body {color:#000000; font:Timesnewroman;}
+	h1 {text-align:center;}
+	li {text-align:center;height:100;}
+	-->
+	</style>
+</head>
+<body background ="images\SchuppenTex.jpg">
+<h1><u>My Wishlist</u></h1>
+<div style="text-align: center;">
+<textarea id="myTextArea" rows="32" cols="50" placeholder="Start typing..."></textarea>
+<script>
+  const textarea = document.getElementById("myTextArea");
+
+  // Load saved content on page load
+  textarea.value = localStorage.getItem("savedText") || "";
+
+  // Save content every time it changes
+  textarea.addEventListener("input", () => {
+    localStorage.setItem("savedText", textarea.value);
+  });
+</script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
