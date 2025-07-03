@@ -37,9 +37,9 @@ namespace DiceRoller {
             }
             else if (continueAddingDice === "no") {
                 console.log("No more dice will be added.");
-                numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "1");
-                while (isNaN(numberOfRolls) || numberOfRolls <= 0) {
-                    numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "1");
+                numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
+                while (numberOfRolls <= 0) {
+                    numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
                     if (isNaN(numberOfRolls) || numberOfRolls > 0) {
                         break;
                     }
