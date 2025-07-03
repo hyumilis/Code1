@@ -2,7 +2,7 @@ namespace DiceRoller {
 
     let continueAddingDice: string = "yes";
     let total: number[] = [];
-    let numberOfRolls: number = 0;
+    let numberOfRolls: number = 100;
     type Dice = { [key: string]: number };
     let dice: Dice = {
         d4: 0,
