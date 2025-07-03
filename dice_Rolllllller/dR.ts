@@ -37,6 +37,7 @@ namespace DiceRoller {
             }
             else if (continueAddingDice === "no") {
                 console.log("No more dice will be added.");
+                numberOfRolls = parseInt(prompt("Invalid input. Please enter a positive integer for the number of rolls:") || "0");
                 while (isNaN(numberOfRolls) || numberOfRolls <= 0) {
                     numberOfRolls = parseInt(prompt("Invalid input. Please enter a positive integer for the number of rolls:") || "0");
                     if (isNaN(numberOfRolls) || numberOfRolls > 0) {
