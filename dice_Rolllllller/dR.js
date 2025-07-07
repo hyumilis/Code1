@@ -35,13 +35,25 @@ var DiceRoller;
             }
             else if (continueAddingDice === "no") {
                 console.log("No more dice will be added.");
-                rollDice();
+                let numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
+                while (numberOfRolls <= 0) {
+                    numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
+                    if (isNaN(numberOfRolls) || numberOfRolls > 0) {
+                        break;
+                    }
+                    else {
+                        output("Invalid input. Please enter a positive integer for the number of rolls.");
+                    }
+                }
+                for (let i = 0; i < numberOfRolls; i++) {
+                    rollDice();
+                }
                 output(`Summary of rolls:
-            Sum of rolls: ${totalSum()}
-            Maximum roll: ${maxRoll()}
-            Minimum roll: ${minRoll()}
-            Average roll: ${averageRoll()}
-            Median roll: ${medianRoll()}`);
+                Sum of rolls: ${totalSum()}
+                Maximum roll: ${maxRoll()}
+                Minimum roll: ${minRoll()}
+                Average roll: ${averageRoll()}
+                Median roll: ${medianRoll()}`);
                 let temp2 = prompt("Do you want to roll again? (yes/no)");
                 continueAddingDice = temp2 ? temp2.toLowerCase() : "no";
                 if (continueAddingDice === "no") {

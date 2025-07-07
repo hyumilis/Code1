@@ -2,7 +2,6 @@ namespace DiceRoller {
 
     let continueAddingDice: string = "yes";
     let total: number[] = [];
-    let numberOfRolls: number = 100;
     type Dice = { [key: string]: number };
     let dice: Dice = {
         d4: 0,
@@ -20,8 +19,8 @@ namespace DiceRoller {
 
     function diceSelection(): void {
         while (continueAddingDice !== "no") {
-            let temp1 = prompt("Do you wanna add some dice to roll? (yes/no)")
-            continueAddingDice = temp1 ? temp1.toLowerCase() : "no";
+            let temp1 = prompt("Do you wanna add some dice to roll? (yes/no)");
+            continueAddingDice = temp1 ? temp1.toLowerCase().trim() : "no";
             if (continueAddingDice === "yes") {
                 let diceType = prompt("What kind of dice do you want to add? (d4, d6, d8, d10, d12, d20)");
                 if (diceType && diceType in dice) {
@@ -37,7 +36,8 @@ namespace DiceRoller {
             }
             else if (continueAddingDice === "no") {
                 console.log("No more dice will be added.");
-                numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
+                alert("No more dice will be added.");
+                let numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
                 while (numberOfRolls <= 0) {
                     numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
                     if (isNaN(numberOfRolls) || numberOfRolls > 0) {
