@@ -1,0 +1,3 @@
+Idee: VisuellNovel About a 5th Person joining our current table.
+Player can choose to interact with each Person on the table, resulting in a small stupid Story per Character.
+Each Character STORY gets produced by 1 Person freely and will get merged in the final stage.
