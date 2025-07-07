@@ -1,4 +1,4 @@
-namespace EventInspector {
+namespace EventInspBaector {
 
 const iframe = document.getElementById("preview") as HTMLIFrameElement;
 
