@@ -7,3 +7,4 @@ var shovelnovel;
         console.log("discovery");
     }
 })(shovelnovel || (shovelnovel = {}));
+//# sourceMappingURL=gamestate_inspector.js.map

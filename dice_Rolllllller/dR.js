@@ -17,7 +17,7 @@ var DiceRoller;
     function diceSelection() {
         while (continueAddingDice !== "no") {
             let temp1 = prompt("Do you wanna add some dice to roll? (yes/no)");
-            continueAddingDice = temp1 ? temp1.toLowerCase() : "no";
+            continueAddingDice = temp1 ? temp1.toLowerCase().trim() : "yes";
             if (continueAddingDice === "yes") {
                 let diceType = prompt("What kind of dice do you want to add? (d4, d6, d8, d10, d12, d20)");
                 if (diceType && diceType in dice) {
@@ -35,6 +35,7 @@ var DiceRoller;
             }
             else if (continueAddingDice === "no") {
                 console.log("No more dice will be added.");
+                alert("No more dice will be added.");
                 let numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
                 while (numberOfRolls <= 0) {
                     numberOfRolls = parseInt(prompt("How often should the dice be rolled?") || "100");
@@ -48,6 +49,7 @@ var DiceRoller;
                 for (let i = 0; i < numberOfRolls; i++) {
                     rollDice();
                 }
+                output("Total roll: ${total}");
                 output(`Summary of rolls:
                 Sum of rolls: ${totalSum()}
                 Maximum roll: ${maxRoll()}
@@ -77,7 +79,6 @@ var DiceRoller;
                 }
             }
         }
-        output(`Total roll: ${total}`);
     }
     function totalSum() {
         let sum = 0;
