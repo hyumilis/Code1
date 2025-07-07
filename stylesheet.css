@@ -1,0 +1,22 @@
+body {
+    background-color: #fafafa;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+iframe {
+    id: "preview";
+    border: 3px solid #ccc;
+    height: 60%;
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    frameborder: 2;
+    allowfullscreen: true;
+    border: 2px solid black;
+}
+
+#preview {
+    border: 2px dashed gray;
+    background-color: #f9f9f9;
+}
