@@ -3,8 +3,11 @@ namespace EventInspector {
 const iframe = document.getElementById("preview") as HTMLIFrameElement;
 
 iframe.addEventListener("click", () => {
-    console.log("Iframe clicked. Loading new content...");
-    iframe.src = "dice_Rolllllller/dR.html";
+    const dataSrc = iframe.getAttribute("data-src");
+    if (dataSrc && !iframe.src) {
+        iframe.src = dataSrc;
+        console.log("Iframe is now loading:", dataSrc);
+    }
 });
 
 }
