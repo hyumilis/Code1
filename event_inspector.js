@@ -3,8 +3,11 @@ var EventInspector;
 (function (EventInspector) {
     const iframe = document.getElementById("preview");
     iframe.addEventListener("click", () => {
-        console.log("Iframe clicked. Loading new content...");
-        iframe.src = "dice_Rolllllller/dR.html"; // Change this to the desired URL
+        const dataSrc = iframe.getAttribute("data-src");
+        if (dataSrc && !iframe.src) {
+            iframe.src = dataSrc;
+            console.log("Iframe is now loading:", dataSrc);
+        }
     });
 })(EventInspector || (EventInspector = {}));
 //# sourceMappingURL=event_inspector.js.map

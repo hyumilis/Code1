@@ -1,6 +1,6 @@
 // Nim The Game
 
-const randomInt = (min, max) =>
+const randomInt = (min : number, max : number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Setup
@@ -14,7 +14,7 @@ console.log("Da Rules:\nChose to play against a Player or an Enemy(easy/hard)\nP
 
 // Player
 function _playerturn(): void {
-    globalThis.correctinput = false;
+    correctinput = false;
     while (!correctinput) {
         const pilenumberInput = prompt("Wich pile?");
         if (pilenumberInput === "1" || pilenumberInput === "2" || pilenumberInput === "3" || pilenumberInput === "4") {
@@ -23,7 +23,7 @@ function _playerturn(): void {
             while (true) {
                 const lampcountInput = prompt("How many?");
                 if (!isNaN(Number(lampcountInput))) {
-                    lampcount = parseInt(lampcountInput);
+                    lampcount = parseInt(lampcountInput || "1");
                     break;
                 } else {
                     console.log("Please input a number!");
@@ -151,30 +151,30 @@ function _isPileEmthyOrRemoveEasy(pile: number, currentpilecount: number, count:
 }
 
 // Enemy/Gamemode options
-let enemySelectionComplete = false;
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+// let enemySelectionComplete = false;
+//const rl = readline.createInterface({
+//    input: process.stdin,
+//    output: process.stdout
+//});
 
-function selectEnemyType() {
-    rl.question("Would you like a hard or easy enemy or play against another player?", (enemytype) => {
-        if (enemytype === "hard" || enemytype === "easy" || enemytype === "player") {
-            if (enemytype === "hard") {
-                console.log("This enemy is currently unavailable, I´m sorry.");
-                selectEnemyType();
-            } else {
-                enemySelectionComplete = true;
-                rl.close();
-            }
-        } else {
-            console.log("Please input hard, easy or player!");
-            selectEnemyType();
-        }
-    });
-}
+//function selectEnemyType() {
+//    rl.question("Would you like a hard or easy enemy or play against another player?", (enemytype) => {
+//        if (enemytype === "hard" || enemytype === "easy" || enemytype === "player") {
+//            if (enemytype === "hard") {
+//                console.log("This enemy is currently unavailable, I´m sorry.");
+//                selectEnemyType();
+//            } else {
+//                enemySelectionComplete = true;
+//                rl.close();
+//            }
+//        } else {
+//            console.log("Please input hard, easy or player!");
+//            selectEnemyType();
+//        }
+//    });
+//}
 
-selectEnemyType();
+// selectEnemyType();
 
 // Pile setup
 console.log("These are the Piles: " + r0 + " " + r1 + " " + r2 + " " + r3);
@@ -189,16 +189,16 @@ while (!(r0 === 0 && r1 === 0 && r2 === 0 && r3 === 0)) {
         break;
     }
     console.log("These are the Piles: " + r0 + " " + r1 + " " + r2 + " " + r3 + "\n");
-    if (enemytype === "easy") {
+//    if (enemytype === "easy") {
         console.log("easy bot's turn");
         _easyenemy();
-    } else if (enemytype === "hard") {
+//    } else if (enemytype === "hard") {
         console.log("hard bot's turn");
         // _hardenemy();
-    } else if (enemytype === "player") {
+//    } else if (enemytype === "player") {
         console.log("Player two's turn");
         _playerturn();
-    }
+//    }
     console.log("These are the Piles: " + r0 + " " + r1 + " " + r2 + " " + r3 + "\n");
     if (r0 === 0 && r1 === 0 && r2 === 0 && r3 === 0) {
         won = true;
@@ -206,12 +206,12 @@ while (!(r0 === 0 && r1 === 0 && r2 === 0 && r3 === 0)) {
 }
 
 // End message
-if (won && enemytype !== "player") {
-    console.log("You won ;)");
-} else if (won && enemytype === "player") {
-    console.log("Player one won ;)");
-} else if (!won && enemytype === "player") {
-    console.log("Player two won :)");
-} else {
-    console.log("You lost :(\nGet good");
-}
+//if (won && enemytype !== "player") {
+//    console.log("You won ;)");
+//} else if (won && enemytype === "player") {
+//    console.log("Player one won ;)");
+//} else if (!won && enemytype === "player") {
+//    console.log("Player two won :)");
+//} else {
+//    console.log("You lost :(\nGet good");
+//}
