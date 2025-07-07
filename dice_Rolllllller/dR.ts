@@ -50,6 +50,7 @@ namespace DiceRoller {
                 for (let i = 0; i < numberOfRolls; i++) {
                     rollDice();
                 }
+                output("Total roll: ${total}");
                 output(`Summary of rolls:
                 Sum of rolls: ${totalSum()}
                 Maximum roll: ${maxRoll()}
@@ -65,7 +66,6 @@ namespace DiceRoller {
                 }
                 resetDice();
             }
-            
             else {
                 output("Invalid input. Please enter 'yes' or 'no'.");
             }
@@ -83,8 +83,6 @@ namespace DiceRoller {
                 }
             }
         }
-        output(`Total roll: ${total}`);
-
     }
 
     function totalSum(): number {
