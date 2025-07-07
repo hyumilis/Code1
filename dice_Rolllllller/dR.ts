@@ -20,7 +20,7 @@ namespace DiceRoller {
     function diceSelection(): void {
         while (continueAddingDice !== "no") {
             let temp1 = prompt("Do you wanna add some dice to roll? (yes/no)");
-            continueAddingDice = temp1 ? temp1.toLowerCase().trim() : "no";
+            continueAddingDice = temp1 ? temp1.toLowerCase().trim() : "yes";
             if (continueAddingDice === "yes") {
                 let diceType = prompt("What kind of dice do you want to add? (d4, d6, d8, d10, d12, d20)");
                 if (diceType && diceType in dice) {
